@@ -1,0 +1,13 @@
+RewriteEngine on
+RewriteBase /~eban/
+#RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^$ index.html [L]
+RewriteRule ruby-changes:\s*(\d+) http://archive.good-day.net/~w3ml/w3ml.cgi/ruby-changes/msg/$1 [L]
+RewriteRule (ruby-\w+):\s*(\d+) http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/$1/$2 [L]
+RewriteRule ^#?(\d+) http://bugs.ruby-lang.org/issues/$1 [L]
+RewriteRule ^r(\d+) http://svn.ruby-lang.org/cgi-bin/viewvc.cgi?view=revision&revision=$1 [L]
+RewriteRule ^n[:\s]r?(\d+) http://www.google.com/search?hl=ja&lr=lang_ja&ie=utf-8&q=r$1+inurl:d.hatena.ne.jp/nagachika/ [L]
+RewriteRule ruby-(\w+)$ http://blade.nagaokaut.ac.jp/ruby/ruby-$1/index.shtml [L]
+RewriteRule (?i)GH-?(\d+) https://github.com/ruby/ruby/pull/$1 [L]
+RewriteRule ^g[:\s]\s*(.*)$ http://www.google.com/search?hl=ja&lr=lang_ja&ie=utf-8&q=$1+site:blade.nagaokaut.ac.jp+inurl:blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ [L]
+RewriteRule ^(?:rurema:\s*)?(.+)$ http://rurema.clear-code.com/query:$1/ [L]
